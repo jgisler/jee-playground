@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.gislers.playgrounds.jee</groupId>
+    <artifactId>jee-playground</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <scm>
+        <connection>scm:git:git@github.com:jgisler/jee-playground.git</connection>
+        <developerConnection>scm:git:git@github.com:jgisler/jee-playground.git</developerConnection>
+        <url>https://github.com/jgisler/jee-playground.git</url>
+    </scm>
+
+    <modules>
+        <module>esb-domain</module>
+        <module>esb-services</module>
+        <module>esb-gateway-war</module>
+        <module>esb-gateway-ear</module>
+    </modules>
+
+    <!--http://javapapo.blogspot.gr/2014/05/java-ee7-and-maven-project-for-newbies_30.html-->
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!--Plugin versions-->
+        <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
+        <maven.ear.plugin.version>2.10.1</maven.ear.plugin.version>
+        <maven.war.plugin.version>2.6</maven.war.plugin.version>
+        <maven.ejb.plugin.version>2.5.1</maven.ejb.plugin.version>
+
+        <!--Dependency versions-->
+        <java-ee.api.version>7.0</java-ee.api.version>
+        <junit.version>4.12</junit.version>
+
+        <!--EJB spec version-->
+        <ejb.spec.version>3.2</ejb.spec.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>${maven.ear.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven.war.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ejb-plugin</artifactId>
+                    <version>${maven.ejb.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.gislers.playgrounds.jee</groupId>
+                <artifactId>esb-domain</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.gislers.playgrounds.jee</groupId>
+                <artifactId>esb-services</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.gislers.playgrounds.jee</groupId>
+                <artifactId>esb-gateway-war</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>war</type>
+            </dependency>
+
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${java-ee.api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+</project>
