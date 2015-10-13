@@ -22,6 +22,8 @@
         <module>esb-gateway-web</module>
         <module>esb-gateway-ear</module>
         <module>esb-common</module>
+        <module>product-consumers</module>
+        <module>product-consumers-ear</module>
     </modules>
 
     <!--http://www.javacodegeeks.com/2015/03/java-ee7-and-maven-project-for-newbies-part-8.html-->
@@ -158,6 +160,21 @@
                 <artifactId>esb-gateway-web</artifactId>
                 <version>${project.version}</version>
                 <type>war</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.gislers.playgrounds.jee</groupId>
+                <artifactId>product-consumers</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--Camel-->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-parent</artifactId>
+                <version>2.15.3</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
 
             <!--Jackson JSON-->

@@ -9,9 +9,10 @@
         <artifactId>jee-playground</artifactId>
         <groupId>org.gislers.playgrounds.jee</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>esb-gateway-ear</artifactId>
+    <artifactId>product-consumers-ear</artifactId>
     <packaging>ear</packaging>
 
     <build>
@@ -25,11 +26,6 @@
                     <defaultJavaBundleDir>/</defaultJavaBundleDir>
                     <skinnyWars>true</skinnyWars>
                     <modules>
-                        <webModule>
-                            <groupId>org.gislers.playgrounds.jee</groupId>
-                            <artifactId>esb-gateway-web</artifactId>
-                            <contextRoot>/esb-gateway</contextRoot>
-                        </webModule>
                         <ejbModule>
                             <groupId>org.gislers.playgrounds.jee</groupId>
                             <artifactId>esb-services</artifactId>
@@ -37,6 +33,10 @@
                         <jarModule>
                             <groupId>org.gislers.playgrounds.jee</groupId>
                             <artifactId>esb-common</artifactId>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>org.gislers.playgrounds.jee</groupId>
+                            <artifactId>product-consumers</artifactId>
                         </jarModule>
                     </modules>
                 </configuration>
@@ -62,10 +62,9 @@
     </build>
 
     <dependencies>
-
         <dependency>
             <groupId>org.gislers.playgrounds.jee</groupId>
-            <artifactId>esb-common</artifactId>
+            <artifactId>product-consumers</artifactId>
         </dependency>
 
         <dependency>
@@ -76,35 +75,8 @@
 
         <dependency>
             <groupId>org.gislers.playgrounds.jee</groupId>
-            <artifactId>esb-gateway-web</artifactId>
-            <type>war</type>
+            <artifactId>esb-common</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-jms</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-cdi</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
     </dependencies>
 
 </project>
