@@ -1,4 +1,4 @@
-package org.gislers.playground.esb.gateway.config;
+package org.gislers.playgrounds.jee.gateway.config;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -7,6 +7,6 @@ import javax.ws.rs.core.Application;
  * Created by jim
  * Created on 10/4/15.
  */
-@ApplicationPath("gateway")
+@ApplicationPath("api")
 public class GatewayApplication extends Application {
 }

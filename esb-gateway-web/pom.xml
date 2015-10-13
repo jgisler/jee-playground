@@ -33,10 +33,29 @@
     </build>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.gislers.playgrounds.jee</groupId>
+            <artifactId>esb-common</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.gislers.playgrounds.jee</groupId>
             <artifactId>esb-services</artifactId>
             <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
             <scope>provided</scope>
         </dependency>
 

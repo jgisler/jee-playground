@@ -33,6 +33,10 @@
                             <groupId>org.gislers.playgrounds.jee</groupId>
                             <artifactId>esb-services</artifactId>
                         </ejbModule>
+                        <jarModule>
+                            <groupId>org.gislers.playgrounds.jee</groupId>
+                            <artifactId>esb-common</artifactId>
+                        </jarModule>
                     </modules>
                 </configuration>
             </plugin>
@@ -57,6 +61,12 @@
     </build>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.gislers.playgrounds.jee</groupId>
+            <artifactId>esb-common</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.gislers.playgrounds.jee</groupId>
             <artifactId>esb-services</artifactId>
@@ -68,6 +78,23 @@
             <artifactId>esb-gateway-web</artifactId>
             <type>war</type>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+
+
+
+
+
+
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

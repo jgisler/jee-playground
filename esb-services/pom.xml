@@ -30,10 +30,22 @@
     </build>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.gislers.playgrounds.jee</groupId>
+            <artifactId>esb-common</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.gislers.playgrounds.jee</groupId>
             <artifactId>esb-domain</artifactId>
             <type>ejb</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
         <dependency>
