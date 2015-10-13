@@ -25,6 +25,7 @@
                     <ejbVersion>${ejb.spec.version}</ejbVersion>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
@@ -38,6 +39,13 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
+        </dependency>
+
+        <!--Test dependencies-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

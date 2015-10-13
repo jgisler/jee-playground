@@ -37,6 +37,7 @@
             <groupId>org.gislers.playgrounds.jee</groupId>
             <artifactId>esb-services</artifactId>
             <type>ejb</type>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

@@ -22,7 +22,7 @@
                 <artifactId>maven-ear-plugin</artifactId>
                 <configuration>
                     <finalName>${project.artifactId}</finalName>
-                    <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+                    <defaultJavaBundleDir>/</defaultJavaBundleDir>
                     <skinnyWars>true</skinnyWars>
                     <modules>
                         <webModule>
@@ -35,6 +35,23 @@
                         </ejbModule>
                     </modules>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>deploy-ear</id>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
