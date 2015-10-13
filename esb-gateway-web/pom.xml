@@ -12,7 +12,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>esb-gateway-war</artifactId>
+    <artifactId>esb-gateway-web</artifactId>
     <packaging>war</packaging>
 
     <build>
@@ -44,13 +44,6 @@
     </build>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.gislers.playgrounds.jee</groupId>
-            <artifactId>esb-domain</artifactId>
-            <type>ejb</type>
-        </dependency>
-
         <dependency>
             <groupId>org.gislers.playgrounds.jee</groupId>
             <artifactId>esb-services</artifactId>
@@ -60,9 +53,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
 </project>
