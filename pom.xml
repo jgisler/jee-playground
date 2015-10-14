@@ -17,6 +17,7 @@
     </scm>
 
     <modules>
+        <module>esb-config</module>
         <module>esb-domain</module>
         <module>esb-services</module>
         <module>esb-gateway-web</module>
@@ -43,6 +44,7 @@
         <wildfly.maven.plugin.version>1.0.2.Final</wildfly.maven.plugin.version>
 
         <!--Dependency versions-->
+        <camel.parent.version>2.16.0</camel.parent.version>
         <jackson.version>2.6.2</jackson.version>
         <commons.lang3.version>3.4</commons.lang3.version>
         <java-ee.api.version>7.0</java-ee.api.version>
@@ -172,7 +174,7 @@
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-parent</artifactId>
-                <version>2.15.3</version>
+                <version>${camel.parent.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

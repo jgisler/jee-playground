@@ -1,4 +1,4 @@
-package org.gislers.playgrounds.jee.mdb.product.v3;
+package org.gislers.playgrounds.jee.mdb.product.v4;
 
 import org.gislers.playgrounds.jee.mdb.product.AbstractProductMdb;
 
@@ -8,18 +8,18 @@ import java.util.logging.Logger;
 
 /**
  * Created by:   jgisle
- * Created date: 10/13/15
+ * Created date: 10/14/15
  */
-@MessageDriven(name = "BrandV3ProductMdb", activationConfig = {
-        @ActivationConfigProperty(propertyName = "destinationLookup"        , propertyValue = "java:/jms/topic/OutboundV3ProductTopic"),
+@MessageDriven(name = "BrandV4ProductMdb", activationConfig = {
+        @ActivationConfigProperty(propertyName = "destinationLookup"        , propertyValue = "java:/jms/topic/OutboundV4ProductTopic"),
         @ActivationConfigProperty(propertyName = "destinationType"          , propertyValue = "javax.jms.Topic"),
         @ActivationConfigProperty(propertyName = "acknowledgeMode"          , propertyValue = "Auto-acknowledge"),
-        @ActivationConfigProperty(propertyName = "subscriptionName"         , propertyValue = "BrandV3ProductMdb"),
+        @ActivationConfigProperty(propertyName = "subscriptionName"         , propertyValue = "BrandV4ProductMdb"),
         @ActivationConfigProperty(propertyName = "subscriptionDurability"   , propertyValue = "Durable")
 })
-public class BrandV3ProductMdb extends AbstractProductMdb {
+public class BrandV4ProductMdb extends AbstractProductMdb {
 
-    private static final Logger logger = Logger.getLogger( BrandV3ProductMdb.class.getSimpleName() );
+    private static final Logger logger = Logger.getLogger( BrandV4ProductMdb.class.getSimpleName() );
 
     @Override
     protected Logger getLogger() {

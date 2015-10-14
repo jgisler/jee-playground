@@ -30,6 +30,25 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--Camel message routing-->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-cdi</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>

@@ -48,24 +48,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-jms</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-cdi</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <scope>provided</scope>

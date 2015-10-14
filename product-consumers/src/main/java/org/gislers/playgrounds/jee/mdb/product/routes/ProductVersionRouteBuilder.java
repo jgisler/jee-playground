@@ -1,4 +1,4 @@
-package org.gislers.playgrounds.jee.gateway.route;
+package org.gislers.playgrounds.jee.mdb.product.routes;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
@@ -17,7 +17,7 @@ import javax.jms.ConnectionFactory;
 @Startup
 @ApplicationScoped
 @ContextName("jms-camel-context")
-public class ProductMessageVersionRoute extends RouteBuilder {
+public class ProductVersionRouteBuilder extends RouteBuilder {
 
     @Resource(lookup = "java:jboss/DefaultJMSConnectionFactory")
     private ConnectionFactory connectionFactory;
@@ -26,6 +26,7 @@ public class ProductMessageVersionRoute extends RouteBuilder {
     public void configure() throws Exception {
         JmsComponent jmsComponent = new JmsComponent();
         jmsComponent.setConnectionFactory(connectionFactory);
+
         getContext().addComponent("jms", jmsComponent);
 
         from("jms:queue:InboundProductQueue")

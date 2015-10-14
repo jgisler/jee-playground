@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>jee-playground</artifactId>
+        <groupId>org.gislers.playgrounds.jee</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>esb-config</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <jms.subsystem.name>messaging</jms.subsystem.name>
+        <jms.server.name>hornetq-server</jms.server.name>
+        <jms.instance.name>default</jms.instance.name>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>configure-jms</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>add-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <address>subsystem=${jms.subsystem.name},${jms.server.name}=${jms.instance.name},jms-queue=InboundProductQueue</address>
+                                    <properties>
+                                        <durable>true</durable>
+                                        <entries>!!["java:/jms/queue/InboundProductQueue"]</entries>
+                                    </properties>
+                                </resource>
+                                <resource>
+                                    <address>subsystem=${jms.subsystem.name},${jms.server.name}=${jms.instance.name},jms-topic=OutboundV3ProductTopic</address>
+                                    <properties>
+                                        <durable>true</durable>
+                                        <entries>!!["java:/jms/topic/OutboundV3ProductTopic"]</entries>
+                                    </properties>
+                                </resource>
+                                <resource>
+                                    <address>subsystem=${jms.subsystem.name},${jms.server.name}=${jms.instance.name},jms-topic=OutboundV4ProductTopic</address>
+                                    <properties>
+                                        <durable>true</durable>
+                                        <entries>!!["java:/jms/topic/OutboundV4ProductTopic"]</entries>
+                                    </properties>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
