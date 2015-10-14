@@ -12,7 +12,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>esb-services</artifactId>
+    <artifactId>esb-publish-service</artifactId>
     <packaging>ejb</packaging>
 
     <build>

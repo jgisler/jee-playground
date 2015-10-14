@@ -19,7 +19,7 @@
     <modules>
         <module>esb-config</module>
         <module>esb-domain</module>
-        <module>esb-services</module>
+        <module>esb-publish-service</module>
         <module>esb-gateway-web</module>
         <module>esb-gateway-ear</module>
         <module>esb-common</module>
